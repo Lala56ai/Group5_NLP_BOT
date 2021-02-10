@@ -6,7 +6,7 @@ Created on Fri Feb  5 00:29:58 2021
 """
 
 import pickle
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flasgger import Swagger
 import numpy as np
 import pandas as pd
@@ -85,7 +85,9 @@ def data_extact(x):
     return year,month,day,week_day,season
 
 
-
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/predict', methods=["POST"])
 def predict_json():
