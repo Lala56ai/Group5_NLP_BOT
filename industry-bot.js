@@ -251,9 +251,9 @@ function init() {
 
 
 function sendXHR1(key,showAccidentLevel) {
-		
-    var text = '{ "accident_deatils" : [' +
-'{ "Country":'+country+' , "Local":'+local+', "Industry_Sector":'+isection+', "Gender":'+gender+', "Employee_Type":'+eType+', "Critical_Risk":'+risk+' , "Date":"'+date+'" , "Description":"'+key+'" }'+ ']}';
+    
+var text = "{\"accident_deatils\": {\"Country\": "+country+",\"Local\": "+local+",\"Industry_Sector\": "+isection+",\"Gender\": "+gender+",\"Employee_Type\": "+eType+",\"Critical_Risk\": "+risk+",\"Date\": \""+date+"\",\"Description\":\""+key+"\"}}"
+
 var obj = JSON.parse(text);
 	
   var xhr = new XMLHttpRequest();
@@ -262,15 +262,25 @@ var obj = JSON.parse(text);
     var res = JSON.parse(xhr.responseText)
 	showAccidentLevel(xhr.responseText)
   }
-  xhr.send(obj);
+  xhr.send(text);
 }
+
+
+function showAccidentLevel(lvl) {
+  botui.message
+  .update(loadingMsgIndex, {
+    content: 'Accident Level :' + (lvl || "Not found")  
+  })
+  .then(init); // ask again for repo. Keep in loop.
+}
+
 
 /*
 function sendXHR1(key) {
   var alvl = LoadJson(key);
   showAccidentLevel(alvl);
 }
-*/
+
 
 function LoadJson(key){
 	var accident_deatils = {
@@ -301,15 +311,6 @@ return(json[key]);
 console.log(json[key]);
 }
 
-function showAccidentLevel(lvl) {
-  botui.message
-  .update(loadingMsgIndex, {
-    content: 'Accident Level :' + (lvl || "Not found")  
-  })
-  .then(init); // ask again for repo. Keep in loop.
-}
-
-
 function sendXHR(repo, cb) {
   var xhr = new XMLHttpRequest();
   var self = this;
@@ -327,3 +328,4 @@ function showStars(stars) {
   })
   .then(init); // ask again for repo. Keep in loop.
 }
+*/
