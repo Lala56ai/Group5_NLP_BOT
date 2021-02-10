@@ -133,8 +133,8 @@ def predict_json():
     #print(jsonify(input))
     #input_data = pd.read_csv(request.files.get("input_file"), header=None)
     #prediction = model.predict(input_data)
-    #return jsonify({"pedict":y_pred})
-    return y_pred
+    return jsonify({"pedict":y_pred})
+    #return y_pred
 if __name__ == '__main__':
     #app.run(host='0.0.0.0', port=5000)
     app.run()
