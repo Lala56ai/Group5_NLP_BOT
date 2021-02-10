@@ -12,11 +12,11 @@ import numpy as np
 import pandas as pd
 #from keras.models import model_from_json
 import json
-
+'''
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-
+'''
 
 #with open('/var/www/flask_predict_api/rf.pkl', 'rb') as model_file:
  #   model = pickle.load(model_file)
@@ -44,7 +44,7 @@ def read_model():
     loaded_model=loaded_model.load_weights("model.h5")
     print("Loaded model from disk")
     return loaded_model'''
-
+'''
 def tokenizer_text(data):
     print("tokenizer_text")
     max_features=10000
@@ -54,7 +54,7 @@ def tokenizer_text(data):
     data = tokenizer.texts_to_sequences(data)
     data = pad_sequences(data, maxlen = maxlen, padding='post')
     return data
-
+'''
 def month2seasons(x):
     if x in [9, 10, 11]:
         season = 'Spring'
