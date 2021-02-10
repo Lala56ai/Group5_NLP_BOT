@@ -10,7 +10,7 @@ from flask import Flask, request, jsonify, render_template
 from flasgger import Swagger
 import numpy as np
 import pandas as pd
-from keras.models import model_from_json
+#from keras.models import model_from_json
 import json
 
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -33,7 +33,7 @@ def input_datafarame(lst):
     X_nlp=df[['Description']]
     print(df)
     return X_nlp,X_cat
-
+'''
 def read_model():
     # load json and create model
     json_file = open('model.json', 'r')
@@ -43,7 +43,7 @@ def read_model():
     # load weights into new model
     loaded_model=loaded_model.load_weights("model.h5")
     print("Loaded model from disk")
-    return loaded_model
+    return loaded_model'''
 
 def tokenizer_text(data):
     print("tokenizer_text")
