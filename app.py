@@ -13,7 +13,7 @@ import pandas as pd
 #from keras.models import model_from_json
 import json
 import pickle
-from xgboost import XGBClassifier
+#from xgboost import XGBClassifier
 import joblib
 '''
 from tensorflow.keras.preprocessing.text import Tokenizer
