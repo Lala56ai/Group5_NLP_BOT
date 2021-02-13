@@ -212,12 +212,9 @@ def predict_json():
     #print(jsonify(input))
     #input_data = pd.read_csv(request.files.get("input_file"), header=None)
     #prediction = model.predict(input_data)
-<<<<<<< HEAD
+
     return jsonify({"Accident pedict":acc_lvl,"Potential Accident pedict":pot_acc_lvl})
-=======
-    return jsonify({"Accident pedict":y_pred,"Potential Accident pedict":y_pred})
->>>>>>> cf73d9bee112b682cf52a78045f4ffb578624bdd
-    #return y_pred
+
 if __name__ == '__main__':
     #app.run(host='0.0.0.0', port=5000)
     app.run()
